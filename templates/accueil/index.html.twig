@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AccueilController!{% endblock %}
+
+{% block body %}
+<div class="container-fluid" style=background-image:url("https://cdn.pixabay.com/photo/2016/10/26/05/39/background-1770720_1280.jpg"); background-repeat:no-repeat>
+    <br>
+    <br>
+    <br>
+    <h1 class="text-light text-center">Les derniers Articles sont ici!!!</h1>
+    <br>
+    <div class="d-flex justify-content-center">
+        <div class="container-fluid">
+        {% for post in posts %}
+        <div class="d-flex justify-content-center">
+            <div class="card mb-3" style="max-width: 720px;">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                    <img src="{{ post.imgsrc }}" class="card-img" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">{{post.titre}}</h5>
+                        <div class="d-inline  bg-light text-info">{{post.datecreate|date}}</div>
+                        <div class="d-inline  bg-light text-danger">Commentaires:{{comments|length}}</div>
+                        <p class="card-text"><small class="text-muted">{{post.contenu}}</small></p>
+                    </div>
+                    </div>
+                </div>
+                <div class="row no-gutters">
+                    <div class="card" style="width: 100%;">
+                        <div class="card-body">
+                            {% for comment in post.commentaires %}
+                            <h5 class="card-title">{{comment.username}}</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">{{comment.datecreate|date}}</h6>
+                            <p class="card-text">{{comment.contenu}}</p>
+                            {% endfor %}
+                            {% if  app.user %}
+                            <a href="{{ path('commentaires_new') }}" class="card-link">Ajouter un commentaire</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>    
+            </div>
+        </div>
+        {% endfor %}
+        </div>
+    </div>
+    <br>
+    <br>
+</div>
+{% endblock %}
+

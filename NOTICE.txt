@@ -1,0 +1,15 @@
+Pour se connecter ADMIN => username:Rooter ; password:rooter
+		  USER => username:toto ; password:tototo
+		  USER => username:jojo ; password:jojojo
+                  USER => username:Lolo ; password:lololo
+
+Il me reste des choses à améliorer dans l'immédiat.
+1. Convertir le role de ma table User en json en string pour résoudre le problème lorsqu'on veut ajouter un commentaire.
+2. vérifier la récupération des mes id's User et Articles pour les commentaires.
+3. Afficher le nombre de commentaires par articles et non le total
+
+Merci du délai.
+
+
+
+			

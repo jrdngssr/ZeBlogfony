@@ -1,11 +1,21 @@
 <!DOCTYPE html>
+{% block head_css %}
+    <!-- Copy CSS from https://getbootstrap.com/docs/4.4/getting-started/introduction/#css -->
+{% endblock %}
+{% block head_js %}
+    <!-- Copy JavaScript from https://getbootstrap.com/docs/4.4/getting-started/introduction/#js -->
+{% endblock %}
 <html>
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
+        {% block head %}
+        {% include("navbar/navigation.html.twig") %}
+        {% endblock %}
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </body>
