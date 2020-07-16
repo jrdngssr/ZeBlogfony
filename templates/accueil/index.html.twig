@@ -22,7 +22,7 @@
                     <div class="card-body">
                         <h5 class="card-title">{{post.titre}}</h5>
                         <div class="d-inline  bg-light text-info">{{post.datecreate|date}}</div>
-                        <div class="d-inline  bg-light text-danger">Commentaires:{{comments|length}}</div>
+                        <div class="d-inline  bg-light text-danger">Commentaires:{{post.commentaires|length}}</div>
                         <p class="card-text"><small class="text-muted">{{post.contenu}}</small></p>
                     </div>
                     </div>
