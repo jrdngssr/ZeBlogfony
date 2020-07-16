@@ -7,5 +7,7 @@
 
     {{ include('commentaires/_form.html.twig') }}
 
+    {% if is_granted('ROLE_ADMIN') %}
     <a href="{{ path('commentaires_index') }}">back to list</a>
+    {% endif %}
 {% endblock %}
