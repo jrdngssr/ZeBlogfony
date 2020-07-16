@@ -32,11 +32,11 @@
                         <div class="card-body">
                             {% for comment in post.commentaires %}
                             <h5 class="card-title">{{comment.username}}</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">{{comment.datecreate|date}}</h6>
+                            <h6 class="card-subtitle mb-2 text-info">{{comment.datecreate|date}}</h6>
                             <p class="card-text">{{comment.contenu}}</p>
                             {% endfor %}
                             {% if  app.user %}
-                            <a href="{{ path('commentaires_new') }}" class="card-link">Ajouter un commentaire</a>
+                            <a href="{{ path('commentaires_new') }}" class="card-link text-danger">Ajouter un commentaire</a>
                             {% endif %}
                         </div>
                     </div>
