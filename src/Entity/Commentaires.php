@@ -93,11 +93,6 @@ class Commentaires
         return $this->user;
     }
 
-    public function _toString():string
-    {
-        return $this->getUser();
-    }
-
     public function setUser(?User $user): self
     {
         $this->user = $user;

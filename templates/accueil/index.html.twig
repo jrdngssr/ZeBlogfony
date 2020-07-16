@@ -29,11 +29,19 @@
                 </div>
                 <div class="row no-gutters">
                     <div class="card" style="width: 100%;">
-                        <div class="card-body">
+                        <div class="card-body bg-dark">
                             {% for comment in post.commentaires %}
-                            <h5 class="card-title">{{comment.username}}</h5>
-                            <h6 class="card-subtitle mb-2 text-info">{{comment.datecreate|date}}</h6>
-                            <p class="card-text">{{comment.contenu}}</p>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-sm">
+                                        <h5 class="card-title text-light">{{comment.username}}</h5>
+                                        <h6 class="card-subtitle mb-2 text-info">{{comment.datecreate|date}}</h6>
+                                    </div>
+                                    <div class="col-sm">
+                                    <p class="card-text text-muted">{{comment.contenu}}</p>
+                                    </div>
+                                </div>
+                            </div>
                             {% endfor %}
                             {% if  app.user %}
                             <a href="{{ path('commentaires_new') }}" class="card-link text-danger">Ajouter un commentaire</a>
